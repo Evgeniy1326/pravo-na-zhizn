@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Наши питомцы — выберите, кого хотите увидеть: кошек или собак приюта «Право на Жизнь».">
+  <title>Наши питомцы — Право на Жизнь</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Эмблема приюта «Право на Жизнь»" class="logo-icon">
+        <span class="logo-text">Право на <strong>Жизнь</strong></span>
+      </a>
+      <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">О нас</a></li>
+        <li><a href="pets.html">Наши питомцы</a></li>
+        <li><a href="index.html#help">Как помочь</a></li>
+        <li><a href="index.html#contact">Контакты</a></li>
+        <li><a href="index.html#help" class="btn btn-small">Помочь приюту</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="index.html" class="breadcrumb">← На главную</a>
+        <h1>Наши питомцы</h1>
+        <p>Выберите, кого хотите увидеть — у нас ждут дом и кошки, и собаки самых разных характеров.</p>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="container">
+        <div class="category-grid">
+          <a href="cats.html" class="category-card category-card-cats">
+            <span class="category-icon">🐱</span>
+            <h2>Кошки</h2>
+            <p>Ласковые и независимые — ищут заботливые руки</p>
+            <span class="btn btn-outline btn-small">Смотреть кошек</span>
+          </a>
+          <a href="dogs.html" class="category-card category-card-dogs">
+            <span class="category-icon">🐶</span>
+            <h2>Собаки</h2>
+            <p>Верные друзья, которые ждут своего человека</p>
+            <span class="btn btn-outline btn-small">Смотреть собак</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="Эмблема приюта «Право на Жизнь»" class="logo-icon">
+        <span>Право на <strong>Жизнь</strong></span>
+        <p>Приют для животных © 2026</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">О нас</a>
+        <a href="pets.html">Питомцы</a>
+        <a href="index.html#help">Помочь</a>
+        <a href="index.html#contact">Контакты</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Собаки приюта «Право на Жизнь», которые ищут дом.">
+  <title>Собаки — Право на Жизнь</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Эмблема приюта «Право на Жизнь»" class="logo-icon">
+        <span class="logo-text">Право на <strong>Жизнь</strong></span>
+      </a>
+      <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">О нас</a></li>
+        <li><a href="pets.html">Наши питомцы</a></li>
+        <li><a href="index.html#help">Как помочь</a></li>
+        <li><a href="index.html#contact">Контакты</a></li>
+        <li><a href="index.html#help" class="btn btn-small">Помочь приюту</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="pets.html" class="breadcrumb">← Назад к выбору</a>
+        <h1>🐶 Собаки</h1>
+        <p>Эти собаки ждут любящую семью. Может, именно вы — их человек?</p>
+      </div>
+    </section>
+
+    <section class="catalog-section">
+      <div class="container">
+        <a href="pets.html" class="back-link">← Все категории</a>
+
+        <div class="catalog-grid">
+
+          <!--
+            ШАБЛОН: чтобы добавить новую собаку, скопируйте блок <article> ниже
+            и замените фото, имя, описание и ссылку на форму.
+            Фото кладите в папку images/ с именем вида dog-имя.jpg и указывайте его в src.
+          -->
+          <article class="pet-card">
+            <img src="images/dog-gavrosh.jpg" alt="Гаврош" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Гаврош</h3>
+              <p class="pet-meta">Собака · 3 года · Мужской</p>
+              <p class="pet-desc">Безобидный, ласковый, трепетный. Очень ручной — он ни на шаг не отойдёт от вас. Хватается лапками за человека и держится. Такой милый и наивный пёсик, что очень жалеем его.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Гавроше</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-gera.jpg" alt="Гера" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Гера</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Да, она чёрненькая, но поверьте: такую не спутаешь ни с кем. Искрящиеся глазки, длинные ушки и фирменный хвост-вертолёт, который не устаёт размахивать от счастья.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Гере</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-slavik.jpg" alt="Славик" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Славик</h3>
+              <p class="pet-meta">Собака · Мужской</p>
+              <p class="pet-desc">Несмотря на внушительную внешность, в нём таится нежность щенка. Он уравновешен, умён и очень послушен. Приучен ходить на поводке: не тянет, спокойно ждёт начала прогулки и идеально ведёт себя дома. Славик кастрирован.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Славике</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-telma.jpg" alt="Тельма" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Тельма</h3>
+              <p class="pet-meta">Собака</p>
+              <p class="pet-desc">Невероятно преданная, отлично ходит на поводке, очень смышлёная, сообразительная, в меру активная. Такой хрупкой собаке, как Тельма, совсем не место в приюте.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Тельме</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-muha.jpg" alt="Муха" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Муха</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Вечная девочка-подросток, энергии которой хватит на десяток собак! Она готова бегать и играть с волонтёрами до потери пульса. С появлением у вас Мухи вы ощутите эту детскую радость, непосредственность и искреннюю открытость в полной мере.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Мухе</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-soechka.jpg" alt="Соечка" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Соечка</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Как же любит общаться, на ручки прыгать, обниматься — это всё про неё! Задор и оптимизм у этой собаки неиссякаемый. Абсолютно социализированная, управляемая, воспитанная, коммуникабельная. Проживать с такой собакой — просто мечта!</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Соечке</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-ars.jpg" alt="Арс" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Арс</h3>
+              <p class="pet-meta">Собака · Мужской</p>
+              <p class="pet-desc">Хорош собой, активен и умён. Среднего размера, вполне адекватный, идеально подойдёт для проживания в частном доме, в вольере. После скитаний и бед уличной жизни Арсик заслуживает самых добрых рук и преданных людей.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать об Арсе</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-shans.jpg" alt="Шанс" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Шанс</h3>
+              <p class="pet-meta">Собака · Мужской</p>
+              <p class="pet-desc">Этот рыжий мальчишка бесконечно улыбается. А мы глядим на него и не можем нарадоваться, что все его беды позади. Сейчас это очень весёлый товарищ, который бесконечно любит людей. На прогулке он стремится всех заобнимать.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Шансе</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-ludochka.jpg" alt="Людочка" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Людочка</h3>
+              <p class="pet-meta">Собака · трёхлапая · Женский</p>
+              <p class="pet-desc">Маленькая, трёхлапая собака с большим заветным желанием, которое может исполнить только волшебник, — получить себе немного смелости. Со знакомыми волонтёрами Людушка добрая, пугливая, но смышлёная девочка. Просто и быстро заполучить её в подружки не выйдет, но сколько вы потом получите радости от того, что сделаете одного робкого хвостика счастливым.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Людочке</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-teffi.jpg" alt="Тэффи" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Тэффи</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Ласковая, добрая и просто невероятная Тэффи мечтает об уютном доме. Она сама нежность, может часами обниматься с человеком. Спокойная, не суетливая, не лает по пустякам. Тэффи обожает всех: мужчин, женщин, детей, других животных.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Тэффи</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-taler.jpg" alt="Талер" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Талер</h3>
+              <p class="pet-meta">Собака · Мужской</p>
+              <p class="pet-desc">Вы давно мечтали о собаке, но не знали, о какой именно? Тогда советуем присмотреться к Талеру. Молодой, активный, позитивный и очень дружелюбный. Парень чистокровный дворянин, но очень похож на маленькую лаечку.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Талере</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-azaliya.jpg" alt="Азалия" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Азалия</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Увидев Азалию, вы сразу будете ею очарованы. Она сама нежность, к рукам человека так и льнёт. Ей всё время хочется быть в центре внимания, чтобы её гладили и хвалили. Она энерджайзер, юркая, ловкая.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать об Азалии</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-sandra.jpg" alt="Сандра" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Сандра</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Сандра у нас не самая уверенная в себе собака, но зато очень нежная и трогательная. Такая она вся беззащитная и безобидная. А из-за красивой шёрстки похожа на медвежонка.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Сандре</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/dog-timoshka.jpg" alt="Тимошка" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Тимошка</h3>
+              <p class="pet-meta">Собака · Мужской</p>
+              <p class="pet-desc">Долго думали, какого же цвета у нас Тимошка. Вроде не рыжего, но и не бежевого. Потом поняли — а он ведь жёлтенький, как солнышко. Он и правда такой — тёплый, добрый и очень милый. Бодр, полон сил, привлекателен и лицом, и фигурой.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Тимошке</a>
+            </div>
+          </article>
+
+          <!-- Добавляйте новые карточки собак здесь -->
+
+          <article class="pet-card">
+            <img src="images/dog-rumba.jpg" alt="Румба" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Румба</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Девочка одна из тех, кто умеет на прогулках грозно и страшно лаять на незнакомцев — будет превосходной охранницей! Очень ласковая, не капризная, послушная, любит побегать и поиграть. К другим собакам относится адекватно.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Румбе</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="Эмблема приюта «Право на Жизнь»" class="logo-icon">
+        <span>Право на <strong>Жизнь</strong></span>
+        <p>Приют для животных © 2026</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">О нас</a>
+        <a href="pets.html">Питомцы</a>
+        <a href="index.html#help">Помочь</a>
+        <a href="index.html#contact">Контакты</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

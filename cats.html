@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Кошки приюта «Право на Жизнь», которые ищут дом.">
+  <title>Кошки — Право на Жизнь</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="Эмблема приюта «Право на Жизнь»" class="logo-icon">
+        <span class="logo-text">Право на <strong>Жизнь</strong></span>
+      </a>
+      <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">О нас</a></li>
+        <li><a href="pets.html">Наши питомцы</a></li>
+        <li><a href="index.html#help">Как помочь</a></li>
+        <li><a href="index.html#contact">Контакты</a></li>
+        <li><a href="index.html#help" class="btn btn-small">Помочь приюту</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <a href="pets.html" class="breadcrumb">← Назад к выбору</a>
+        <h1>🐱 Кошки</h1>
+        <p>Эти кошки ждут любящую семью. Может, именно вы — их человек?</p>
+      </div>
+    </section>
+
+    <section class="catalog-section">
+      <div class="container">
+        <a href="pets.html" class="back-link">← Все категории</a>
+
+        <div class="catalog-grid">
+
+          <!--
+            ШАБЛОН: чтобы добавить новую кошку, скопируйте блок <article> ниже
+            и замените фото, имя, описание и ссылку на форму.
+            Фото кладите в папку images/ с именем вида cat-имя.jpg и указывайте его в src.
+          -->
+          <article class="pet-card">
+            <img src="images/cat-domna.jpg" alt="Домна" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Домна</h3>
+              <p class="pet-meta">Кошка · чуть старше годика · Женский</p>
+              <p class="pet-desc pet-desc-poem">
+                Загляните в гости к Домне,<br>
+                расскажите ей о доме,<br>
+                где её так давно ждут,<br>
+                где она создаст уют.<br>
+                Позовите, обнимите<br>
+                и домой скорей зовите.
+              </p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Домне</a>
+            </div>
+          </article>
+
+          <!-- Добавляйте новые карточки кошек здесь -->
+
+          <article class="pet-card">
+            <img src="images/cat-dantesa.jpg" alt="Дантеса" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Дантеса</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Девчонка такая стройная, изящная, лёгкая, как пёрышко. Воздушная балеринка в белых пуантах))) Характер покладистый, нрав неконфликтный. С сородичами живёт дружно.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Дантесе</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/cat-vseslava.jpg" alt="Всеслава" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Всеслава</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Молоденькая девчушка очень хочет вам понравиться. Её братик и сестрички уже обрели дом. А она уже почти год ждёт своего человека в приюте.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Всеславе</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/cat-daramira.jpg" alt="Дарамира" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Дарамира</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Если у вас до сих пор нет дома кошки, то милости просим к нам в приют! Мы вас познакомим с такой приятнейшей особой, каких вам ещё не довелось повидать.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Дарамире</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/cat-anyutka.jpg" alt="Анютка" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Анютка</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Дамочка не агрессивная, а просто очень пугливая. Ей бы и хотелось получить ласку от человека, но сделать шаг вперёд Анютке пока очень страшно.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать об Анютке</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/cat-cheburashka.jpg" alt="Чебурашка" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Чебурашка</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Ищем самые тёплые руки для замечательной девочки. Чебурашка была спасена с улиц города. Она со всех сторон положительная: умная, красивая, спокойная, ненавязчивая, ласковая.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Чебурашке</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/cat-isida.jpg" alt="Исида" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Исида</h3>
+              <p class="pet-meta">Кошка · около года · Женский</p>
+              <p class="pet-desc">В поисках тёплого уголка и любящих рук! Эта юная леди — воплощение спокойствия. Исида — настоящая красавица с шубкой окраса нежных пастельных тонов.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать об Исиде</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/cat-gloria.jpg" alt="Глория" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Глория</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Девочка очень скромная и немного пугливая, но оно и понятно — ведь не каждый может сразу занять своё место в таком большом коллективе. Но она, как и все, ждёт того единственного, кто растопит её сердечко.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Глории</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/cat-marsianka.jpg" alt="Марсианка" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Марсианка</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Очень скромная девочка, ведёт себя тихо, как мышка. Старается не привлекать к себе внимание, немного побаивается. Но всё это временно — дома точно раскроется её широкая душа.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Марсианке</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/cat-siel.jpg" alt="Сиэль" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Сиэль</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Плюшевая девочка с намёком на породу — это просто невероятное очарование. Какое тепло и счастье исходит от неё, не передать словами! Была бы её воля, она часами бы сидела на руках у человека.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Сиэль</a>
+            </div>
+          </article>
+
+          <article class="pet-card">
+            <img src="images/cat-belochka.jpg" alt="Белочка" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Белочка</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Светлое облачко нашего приюта. Она вся такая мягкая, белая, пушистая. Времена, когда она всего и всех боялась, прошли — теперь это уже совсем обычная кошка, с радостью даёт себя погладить.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Белочке</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="Эмблема приюта «Право на Жизнь»" class="logo-icon">
+        <span>Право на <strong>Жизнь</strong></span>
+        <p>Приют для животных © 2026</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#about">О нас</a>
+        <a href="pets.html">Питомцы</a>
+        <a href="index.html#help">Помочь</a>
+        <a href="index.html#contact">Контакты</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
