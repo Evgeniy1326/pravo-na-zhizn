@@ -937,3 +937,112 @@ img {
     text-align: center;
   }
 }
+
+/* Donate page */
+.donate-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.donate-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.donate-card h3 {
+  color: var(--green-dark);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.donate-org {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.donate-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.donate-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 0.5rem;
+}
+
+.donate-list li span {
+  color: var(--text-muted);
+}
+
+.donate-list li strong {
+  color: var(--text);
+  text-align: right;
+}
+
+.donate-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.donate-card-accent {
+  background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.donate-card-accent h3 {
+  color: var(--white);
+}
+
+.donate-qr {
+  background: var(--white);
+  display: inline-block;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+}
+
+.donate-qr img {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.donate-card-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.donate-card-accent a {
+  color: #ffd699;
+  font-weight: 700;
+}
+
+.donate-card-accent .donate-note {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+a.help-card {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .donate-grid {
+    grid-template-columns: 1fr;
+  }
+}
