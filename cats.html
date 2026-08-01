@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/logo.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Кошки — Право на Жизнь">
+  <meta property="og:description" content="Кошки приюта «Право на Жизнь», которые ищут дом.">
+  <meta property="og:image" content="images/logo.jpg">
+  <meta name="twitter:card" content="summary">
 </head>
 <body>
   <header class="header" id="top">
@@ -25,7 +31,9 @@
       <ul class="nav-links">
         <li><a href="index.html#about">О нас</a></li>
         <li><a href="pets.html">Наши питомцы</a></li>
+        <li><a href="adopted.html">Нашли семью</a></li>
         <li><a href="news.html">Новости</a></li>
+        <li><a href="faq.html">Вопросы</a></li>
         <li><a href="index.html#help">Как помочь</a></li>
         <li><a href="index.html#contact">Контакты</a></li>
         <li><a href="index.html#help" class="btn btn-small">Помочь приюту</a></li>
@@ -39,12 +47,23 @@
         <a href="pets.html" class="breadcrumb">← Назад к выбору</a>
         <h1>🐱 Кошки</h1>
         <p>Эти кошки ждут любящую семью. Может, именно вы — их человек?</p>
+        <p class="pet-count-badge" data-animal="cat">Сейчас в приюте: <strong id="pet-count">…</strong></p>
       </div>
     </section>
 
     <section class="catalog-section">
       <div class="container">
         <a href="pets.html" class="back-link">← Все категории</a>
+
+        <div class="pet-filter-bar">
+          <input type="text" id="pet-search" class="pet-search-input" placeholder="🔍 Искать по имени...">
+          <div class="pet-filter-buttons">
+            <button type="button" class="filter-btn active" data-gender="all">Все</button>
+            <button type="button" class="filter-btn" data-gender="Женский">Девочки</button>
+            <button type="button" class="filter-btn" data-gender="Мужской">Мальчики</button>
+          </div>
+          <p class="pet-filter-count" id="pet-filter-count"></p>
+        </div>
 
         <div class="catalog-grid">
 
@@ -53,7 +72,7 @@
             и замените фото, имя, описание и ссылку на форму.
             Фото кладите в папку images/ с именем вида cat-имя.jpg и указывайте его в src.
           -->
-          <article class="pet-card">
+          <article class="pet-card" id="domna">
             <img src="images/cat-domna.jpg" alt="Домна" class="pet-photo-img">
             <div class="pet-info">
               <h3>Домна</h3>
@@ -67,448 +86,570 @@
                 и домой скорей зовите.
               </p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Домне</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Домна" data-slug="domna">📤 Поделиться</button>
             </div>
           </article>
 
           <!-- Добавляйте новые карточки кошек здесь -->
 
-          <article class="pet-card">
+          <article class="pet-card" id="dantesa">
             <img src="images/cat-dantesa.jpg" alt="Дантеса" class="pet-photo-img">
             <div class="pet-info">
               <h3>Дантеса</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Девчонка такая стройная, изящная, лёгкая, как пёрышко. Воздушная балеринка в белых пуантах))) Характер покладистый, нрав неконфликтный. С сородичами живёт дружно.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Дантесе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Дантеса" data-slug="dantesa">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="vseslava">
             <img src="images/cat-vseslava.jpg" alt="Всеслава" class="pet-photo-img">
             <div class="pet-info">
               <h3>Всеслава</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Молоденькая девчушка очень хочет вам понравиться. Её братик и сестрички уже обрели дом. А она уже почти год ждёт своего человека в приюте.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Всеславе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Всеслава" data-slug="vseslava">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="daramira">
             <img src="images/cat-daramira.jpg" alt="Дарамира" class="pet-photo-img">
             <div class="pet-info">
               <h3>Дарамира</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Если у вас до сих пор нет дома кошки, то милости просим к нам в приют! Мы вас познакомим с такой приятнейшей особой, каких вам ещё не довелось повидать.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Дарамире</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Дарамира" data-slug="daramira">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="anyutka">
             <img src="images/cat-anyutka.jpg" alt="Анютка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Анютка</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Дамочка не агрессивная, а просто очень пугливая. Ей бы и хотелось получить ласку от человека, но сделать шаг вперёд Анютке пока очень страшно.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Анютке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Анютка" data-slug="anyutka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="cheburashka">
             <img src="images/cat-cheburashka.jpg" alt="Чебурашка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Чебурашка</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Ищем самые тёплые руки для замечательной девочки. Чебурашка была спасена с улиц города. Она со всех сторон положительная: умная, красивая, спокойная, ненавязчивая, ласковая.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Чебурашке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Чебурашка" data-slug="cheburashka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="isida">
             <img src="images/cat-isida.jpg" alt="Исида" class="pet-photo-img">
             <div class="pet-info">
               <h3>Исида</h3>
               <p class="pet-meta">Кошка · около года · Женский</p>
               <p class="pet-desc">В поисках тёплого уголка и любящих рук! Эта юная леди — воплощение спокойствия. Исида — настоящая красавица с шубкой окраса нежных пастельных тонов.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Исиде</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Исида" data-slug="isida">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="gloriya">
             <img src="images/cat-gloria.jpg" alt="Глория" class="pet-photo-img">
             <div class="pet-info">
               <h3>Глория</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Девочка очень скромная и немного пугливая, но оно и понятно — ведь не каждый может сразу занять своё место в таком большом коллективе. Но она, как и все, ждёт того единственного, кто растопит её сердечко.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Глории</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Глория" data-slug="gloriya">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="marsianka">
             <img src="images/cat-marsianka.jpg" alt="Марсианка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Марсианка</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Очень скромная девочка, ведёт себя тихо, как мышка. Старается не привлекать к себе внимание, немного побаивается. Но всё это временно — дома точно раскроется её широкая душа.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Марсианке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Марсианка" data-slug="marsianka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="siel">
             <img src="images/cat-siel.jpg" alt="Сиэль" class="pet-photo-img">
             <div class="pet-info">
               <h3>Сиэль</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Плюшевая девочка с намёком на породу — это просто невероятное очарование. Какое тепло и счастье исходит от неё, не передать словами! Была бы её воля, она часами бы сидела на руках у человека.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Сиэль</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Сиэль" data-slug="siel">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="belochka">
             <img src="images/cat-belochka.jpg" alt="Белочка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Белочка</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Светлое облачко нашего приюта. Она вся такая мягкая, белая, пушистая. Времена, когда она всего и всех боялась, прошли — теперь это уже совсем обычная кошка, с радостью даёт себя погладить.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Белочке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Белочка" data-slug="belochka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="meni">
             <img src="images/cat-meni.jpg" alt="Мэни" class="pet-photo-img">
             <div class="pet-info">
               <h3>Мэни</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">А рыжие, они такие разные! В настроении хорошем — прекрасные, в игривом — сущий огонь. Это всё о нём, о рыжем метеоре Мэни: шустрик и баламут, который носится почище мастера Формулы-1.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Мэни</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Мэни" data-slug="meni">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="arika">
             <img src="images/cat-arika.jpg" alt="Арика" class="pet-photo-img">
             <div class="pet-info">
               <h3>Арика</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Любоваться Арикой можно просто бесконечно — она так изящна и красива. Несмотря на распространённый камышовый окрас, в ней есть свой шарм и своё обаяние. Арика не из тех, кто сразу полезет к вам на руки, но от ласки не отказывается — просто ей немного страшно.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Арике</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Арика" data-slug="arika">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="neyton">
             <img src="images/cat-neyton.jpg" alt="Нейтон" class="pet-photo-img">
             <div class="pet-info">
               <h3>Нейтон</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Несмотря на то, что Нейтон у нас особенный котик, он очень обаятельный товарищ. Один его глазик, к сожалению, пришлось удалить, но это нисколько не портит внешность этого прекрасного бархатного котишки благородного чёрного оттенка. Кажется, он совсем не замечает своей особинки — просто обычный кот, такой же, как все.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Нейтоне</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Нейтон" data-slug="neyton">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="germes">
             <img src="images/cat-germes.jpg" alt="Гермес" class="pet-photo-img">
             <div class="pet-info">
               <h3>Гермес</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Если вы ищете доброго друга, то вот же он! Гермесу достался не только золотой характер, но и очень красивая внешность, а какие у него глубокие глаза и мудрый взгляд. Ко всему этому мальчик очень ласковый — в общем «колхозе» со всеми дружит. Просто золотой ребёнок.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Гермесе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Гермес" data-slug="germes">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="gyus">
             <img src="images/cat-gus.jpg" alt="Гюс" class="pet-photo-img">
             <div class="pet-info">
               <h3>Гюс</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Он сидит на окне и смотрит вдаль — вдумчиво, осмысленно. Что видит там обычный серый кот: вспоминает безрадостное прошлое или пытается разглядеть счастливое будущее? Но есть настоящее, а в нём — кот-борец, кот-характер, кот-красавчик.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Гюсе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Гюс" data-slug="gyus">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="velik">
             <img src="images/cat-velik.jpg" alt="Велик" class="pet-photo-img">
             <div class="pet-info">
               <h3>Велик</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Велик — это создание тонкой душевной организации: не матёрый кот, а нежный росточек. Настоящий «велик» — стройный и длинноногий, но очень красивый! Совсем молоденький и хорошенький, а отличает его скромность.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Велике</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Велик" data-slug="velik">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="rebekka">
             <img src="images/cat-rebekka.jpg" alt="Ребекка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Ребекка</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Вроде бы эта девочка и обычная полосатая кошечка, а вот и нет — есть в ней своя изюминка и свой шарм. Полосочки её очень красят, а какой у неё проникновенный взгляд — всё понимающий, мудрый и очень нежный. Поначалу эта кошечка была настороженной, но уже совсем оттаяла.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Ребекке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Ребекка" data-slug="rebekka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="krash">
             <img src="images/cat-krash.jpg" alt="Краш" class="pet-photo-img">
             <div class="pet-info">
               <h3>Краш</h3>
               <p class="pet-meta">Кот</p>
               <p class="pet-desc">С виду мамин пирожочек и плюшевый зайка, а в душе — и Терминатор, и Рэмбо, и даже немножко царь. Килограммов пять роскошного мягкого очарования, готового принимать и любить себя таким, какой есть, и очаровывать окружающих.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Краше</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Краш" data-slug="krash">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="bekki">
             <img src="images/cat-bekki.jpg" alt="Бекки" class="pet-photo-img">
             <div class="pet-info">
               <h3>Бекки</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Говорят, что конёк серых кошек — интуиция и способность к сопереживанию. Они защита от сплетен и скандалов, залог удачи и достатка, а ещё прекрасное бесплатное успокоительное. Так почему же такое чудо, как Бекки, ещё не у вас, не на вашем диване?</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Бекки</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Бекки" data-slug="bekki">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="ramen">
             <img src="images/cat-ramen.jpg" alt="Рамен" class="pet-photo-img">
             <div class="pet-info">
               <h3>Рамен</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Пушистый, с шикарным хвостом. Красивущий полосатик-сибиряк, мягонький, контактный, комнатно-пригодный — в смысле очень приличных манер парень. Вполне себе адекватный, но с характером — пацаны же должны немного бунтовать для солидности!</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Рамене</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Рамен" data-slug="ramen">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="vasil">
             <img src="images/cat-vasil.jpg" alt="Василь" class="pet-photo-img">
             <div class="pet-info">
               <h3>Василь</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Всё просто: парень-то до чего же справен, человеколюбив, ласков, чистоплотен и просто хорош собой! Габариты внушительные, вес подобающий, а красота прям очи затмевает — крупный шикарный котище! Вот обнять такого — и наполниться счастьем, умиротворением и переполниться всякими душевными чувствами.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Василе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Василь" data-slug="vasil">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="valeri">
             <img src="images/cat-valeri.jpg" alt="Валери" class="pet-photo-img">
             <div class="pet-info">
               <h3>Валери</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Возможно, вы тот самый человек, готовый подарить этой девчушке целый мир и показать ей, как здорово, когда тебя любят и о тебе заботятся. С момента появления Валери в приюте прогресс определённо есть.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Валери</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Валери" data-slug="valeri">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="eroshka">
             <img src="images/cat-eroshka.jpg" alt="Ерошка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Ерошка</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Вот он, малышок Ерошка, — море очарования, обаяния и позитива! Ещё тот суетолог: везде нос сунет, всё прошарит, пролезет даже туда, где «посторонним вход запрещён». А красавец какой — вырастет в роскошного барина-кота!</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Ерошке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Ерошка" data-slug="eroshka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="fudzhi">
             <img src="images/cat-fudzhi.jpg" alt="Фуджи" class="pet-photo-img">
             <div class="pet-info">
               <h3>Фуджи</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">«Мы, блондинки, в моде при любой погоде» — решила однажды мадмуазель Фуджи и, распушив хвост, стала няшечкой: покладистой, но пока осторожной, очаровательным облачком с характером. Не сразу, но лёд в отношениях тает — теперь и погладить роскошную белую шубку позволяет, и на ручках учится сидеть.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Фуджи</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Фуджи" data-slug="fudzhi">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="nuar">
             <img src="images/cat-nuar.jpg" alt="Нуар" class="pet-photo-img">
             <div class="pet-info">
               <h3>Нуар</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Сколько обаяния и благородства в этом наишикарнейшем коте! Заходя в кошачий «колхоз», взгляд невольно останавливается на этом крупном представителе семейства кошачьих. Он восхищает своими размерами, идеальной лоснящейся чёрно-шоколадной шёрсткой и фигурой. Нуар молод, упитан, красив и немного сдержан.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Нуаре</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Нуар" data-slug="nuar">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="yupiter">
             <img src="images/cat-yupiter.jpg" alt="Юпитер" class="pet-photo-img">
             <div class="pet-info">
               <h3>Юпитер</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Парень пока очень пугливый, шипит, пытается страху и шороху на всех навести. Но это всё из разряда «я самый страшный зверь, бойтесь меня! Я, правда, и сам всего боюсь, но в обиду себя не дам». Приходится с парнем вести задушевные беседы на расстоянии.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Юпитере</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Юпитер" data-slug="yupiter">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="pyatnyshko">
             <img src="images/cat-pyatnyshko.jpg" alt="Пятнышко" class="pet-photo-img">
             <div class="pet-info">
               <h3>Пятнышко</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Это молоденький парень, сынок нашей Ундины. Серое чудо с маленьким рыжим пятнышком на плечике, которое досталось ему от мамы. Он просто подарок судьбы для того, кому очень не хватает друга: общительный, весёлый в меру, оптимист по натуре. Любит побегать и поиграть, ему всё интересно.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Пятнышке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Пятнышко" data-slug="pyatnyshko">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="avariya">
             <img src="images/cat-avariya.jpg" alt="Авария" class="pet-photo-img">
             <div class="pet-info">
               <h3>Авария</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Кошечка Авария получила своё имя, когда оказалась у нас после того, как стала жертвой автомобильных лихачей, которые оставили её на дороге умирать. Но малявка всем назло и нам на радость поправилась, вылечилась и стала настоящей девочкой-дюймовочкой с зелёными глазами и любопытным розовым носиком.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Аварии</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Авария" data-slug="avariya">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="fred">
             <img src="images/cat-fred.jpg" alt="Фред" class="pet-photo-img">
             <div class="pet-info">
               <h3>Фред</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Мягкий плюшевый добряк с золотым характером. Упитан, как все рыжие увальни, воспитан, зеленоглаз, чертовски обаятелен и привлекателен! Обладает завидным аппетитом, чистоплотен, абсолютно ручной. Кому же такое рыжее счастье, солнечное и неимоверно ласковое, достанется?</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Фреде</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Фред" data-slug="fred">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="dzheni">
             <img src="images/cat-dzheni.jpg" alt="Джени" class="pet-photo-img">
             <div class="pet-info">
               <h3>Джени</h3>
               <p class="pet-meta">Кошка · до года · Женский</p>
               <p class="pet-desc">Джени — это супер-реакция, супер-внимательность, супер-скорость, супер-ловкость. Она молоденькая девица, у которой энергии через край: любопытна, умна и очень активна в силу возраста. Даже наш Шумахер, по сравнению с Джени, не такой быстрый!</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Джени</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Джени" data-slug="dzheni">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="angelika">
             <img src="images/cat-angelika.jpg" alt="Ангелика" class="pet-photo-img">
             <div class="pet-info">
               <h3>Ангелика</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Ангелика — девочка очень осторожная и очень пугливая. Можно только смотреть на неё и разговаривать, а вот погладить — не вариант: не подпускает, не доверяет. Мы понимаем, что Ангелика вряд ли покинет стены приюта, но не рассказать о ней — значит лишить её последней, даже самой призрачной, надежды стать домашней.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Ангелике</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Ангелика" data-slug="angelika">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="laor">
             <img src="images/cat-laor.jpg" alt="Лаор" class="pet-photo-img">
             <div class="pet-info">
               <h3>Лаор</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Этот шикарный мужчина внушительных размеров обладает невероятной харизмой и обаянием, какое свойственно только самым очаровательным котам. Чего только стоит один его взгляд горчично-янтарных глаз! Даже по фото видно, что он знает себе цену — гордо вышагивает по приюту, показывая, что он хозяин жизни.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Лаоре</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Лаор" data-slug="laor">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="caca">
             <img src="images/cat-tsatsa.jpg" alt="Цаца" class="pet-photo-img">
             <div class="pet-info">
               <h3>Цаца</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Малышка приехала к нам зимой, запуганная, дикая, всего и всех боящаяся. Она училась выживать в холод, согреваться, как это только возможно, и если бы не добрые люди, Цацы скорее всего уже и не было бы на этом свете. Но всё самое плохое осталось позади — теперь она у нас, постепенно освоилась, нашла друзей.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Цаце</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Цаца" data-slug="caca">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="laisa">
             <img src="images/cat-laisa.jpg" alt="Лаиса" class="pet-photo-img">
             <div class="pet-info">
               <h3>Лаиса</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Она у нас красавица. А вот с коммуникацией пока всё сложно — тихая, скромная одиночка. Но это пока. Будем надеяться, что пребывание в общем «колхозе» пойдёт ей на пользу, и тогда Лаиса даст нам себя погладить и будет с нами дружить. Сейчас просто наблюдает. Но и это прекрасно.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Лаисе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Лаиса" data-slug="laisa">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="bastinda">
             <img src="images/cat-bastinda.jpg" alt="Бастинда" class="pet-photo-img">
             <div class="pet-info">
               <h3>Бастинда</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Бастинда немного пугливая, но это поначалу. Как только до неё дотрагиваешься, она сразу же расслабляется и с большим удовольствием принимает ласку. Что с ней было до приюта — одному Богу известно, но у нас она буквально оттаяла.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Бастинде</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Бастинда" data-slug="bastinda">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="svan">
             <img src="images/cat-svan.jpg" alt="Сван" class="pet-photo-img">
             <div class="pet-info">
               <h3>Сван</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Ласковый и тактильный, Сван не навязывает своё присутствие, но радость от общения выражает громким мурчанием и желанием почесух за ухом. Лоялен к сородичам-котам, снисходительно-тактичен с дамами «колхоза». Такой самодостаточный парень, а вот к людям — со всей душой!</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Сване</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Сван" data-slug="svan">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="kalina">
             <img src="images/cat-kalina.jpg" alt="Калина" class="pet-photo-img">
             <div class="pet-info">
               <h3>Калина</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Красивая — есть у кого-то возражения? Активная — ещё какая! Вместе со всеми в «колхозе» скачет, будь здоров, потому стройная и изящная, как статуэточка. Ласковая, игривая — будет тешить вас игрой с шариками, фантиками, вашими пятками по утрам! Уникальна, единственный экземпляр. Аккуратная.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Калине</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Калина" data-slug="kalina">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="mama-choli">
             <img src="images/cat-mama-choli.jpg" alt="Мама Чоли" class="pet-photo-img">
             <div class="pet-info">
               <h3>Мама Чоли</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Мы понимаем, что вряд ли Мама Чоли уедет домой, по крайней мере в ближайшее время: не всем кошкам суждено найти своих людей, ведь в большинстве своём люди ищут ласковых, нежных и уютных друзей. Мама Чоли другая — красивая и неприступная. Такие представители, как она, живут в приюте в сытости, тепле, на мягких уютных лежаночках, в домиках.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Маме Чоли</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Мама Чоли" data-slug="mama-choli">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="bazuka">
             <img src="images/cat-bazuka.jpg" alt="Базука" class="pet-photo-img">
             <div class="pet-info">
               <h3>Базука</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Обычная полосатая шпротинка в белых носочках никогда не бежит встречать гостей, не ластится под рукой, не привлекает внимания к своей персоне громким мурлыканьем. Нет, она не трусишка — она очень скромная и ненавязчивая девочка. Нечасто ей достаётся внимание и возможность ощутить тепло человеческих объятий, и в такие редкие минуты понимаешь, насколько у неё трепетная душа.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Базуке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Базука" data-slug="bazuka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="pleyboy">
             <img src="images/cat-pleyboy.jpg" alt="Плейбой" class="pet-photo-img">
             <div class="pet-info">
               <h3>Плейбой</h3>
               <p class="pet-meta">Кот · Мужской</p>
               <p class="pet-desc">Плейбой приехал в приют больным, худым, облезлым, жалким — одним словом, обнять и плакать. Один глазик пришлось сразу удалить. Но парень оказался не промах и со временем сменил статус с «жалкость» на «его роскошество». Сейчас котэ уже окреп, возмужал, отъел бочка, шубка заблестела.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Плейбое</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Плейбой" data-slug="pleyboy">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="silviya">
             <img src="images/cat-silviya.jpg" alt="Сильвия" class="pet-photo-img">
             <div class="pet-info">
               <h3>Сильвия</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Ну вот как не восхищаться этим минимализмом! Ведь ничего лишнего в окрасе, всё органично и эстетично — одни белые носочки чего стоят! Шубка гладкая, блестящая. Возможно, не очень-то пока разрешает себя погладить, стесняется, а может, присматривается и ждёт следующей главы счастливой истории — встречи со своим человеком.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Сильвии</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Сильвия" data-slug="silviya">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="artemida">
             <img src="images/cat-artemida.jpg" alt="Артемида" class="pet-photo-img">
             <div class="pet-info">
               <h3>Артемида</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Смотришь на нее и любуешься ее чертами. Помимо всего прочего ей достался идеальный характер. Артемида ласковая, но немного застенчивая. Не шкодливая натура. А значит, подойдет практически каждому. Главное, чтобы вы любили ее, проявляли внимание и заботу. Ведь об этом мечтают все. И Артемида не исключение.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Артемиде</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Артемида" data-slug="artemida">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="kita">
             <img src="images/cat-kita.jpg" alt="Кита" class="pet-photo-img">
             <div class="pet-info">
               <h3>Кита</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Скромная, тихая, с небольшими особенностями по здоровью. Кита пережила травму хвоста и в итоге хвостика лишилась, но её отсутствие она не замечает. И во всём остальном она обычная кошка. Очень красивая, будто осень одарила её своими красками, нанесла на шубку Киты яркие мазки. Пёстрая окраска Киты — это её визитная карточка.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Ките</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Кита" data-slug="kita">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="adalin">
             <img src="images/cat-adalin.jpg" alt="Адалин" class="pet-photo-img">
             <div class="pet-info">
               <h3>Адалин</h3>
               <p class="pet-meta">Кошка · Женский</p>
               <p class="pet-desc">Трёхцветная шубка цвета тёмной летней ночи, осенней листвы и первого снега и ах! — зелёные глаза. А потом вдруг... как же мы любим это вдруг! Недотрога стала увереннее, оттаяла и разрешила себя гладить. Урчит теперь от избытка чувств, ищет почесушек и внимания! Теперь шанс стать домашней красоткой у Адалин появился вполне реальный. И хороша, и скромна, и аккуратна, и душой оттаяла.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Адалин</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Адалин" data-slug="adalin">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="erli">
+            <img src="images/cat-erli.jpg" alt="Эрли" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Эрли</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Эрли молодая, не агрессивная, скорее пугливая, но в добром доме с тёплыми руками все страхи отойдут на второй план, и вы получите безумно ласковое создание, готовое петь вам свои песенки, мурчать на ушко, спать у вас под бочком. Эрли красива, её видишь сразу в общем коллективе — большие яркие глазки, очаровательная белая полосочка на мордочке, она очень трогательный ребёнок. Природа одарила её всем.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать об Эрли</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Эрли" data-slug="erli">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="filosof">
+            <img src="images/cat-filosof.jpg" alt="Философ" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Философ</h3>
+              <p class="pet-meta">Кот · Мужской</p>
+              <p class="pet-desc">Философ — это мальчик в самом расцвете сил. От признаков былого проживания на улице сейчас не осталось и следа. Какой же он стал красивенный! Бочка наел, щёчки тоже, шубку распушил. Какая она у него невероятная — нежно-персикового окраса. А какие у него глаза — взгляд его глубокий и проникающий в душу.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Философе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Философ" data-slug="filosof">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="arabella">
+            <img src="images/cat-arabella.jpg" alt="Арабелла" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Арабелла</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Плюшевая черепашка завоевала в приюте сердце каждого — и людей, и животных. Взгрустнулось волонтёру — значит, нужно идти в кошачьи апартаменты, искать Арабеллу, брать на ручки, и всё — тоску снимает как рукой. А искать Арабеллу даже не надо, она сама найдёт, подойдёт, прижмётся, на ручки попросится.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать об Арабелле</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Арабелла" data-slug="arabella">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="varda">
+            <img src="images/cat-varda.jpg" alt="Варда" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Варда</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Ласковая и контактная, абсолютно неконфликтная кошь, бесконечно благодарная за спасение, лечение и крышу над головой. Миролюбиво настроена ко всей разношёрстной и разноголосой компании. Всегда в первых рядах выходит встречать девочек-волонтёров, не упускает возможности умоститься на ручках и помурчать для души.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Варде</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Варда" data-slug="varda">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="gvinevra">
+            <img src="images/cat-gvinevra.jpg" alt="Гвиневра" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Гвиневра</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Гвиневра также нереально красива, как и её братик Ланселот. Каждый раз, заходя в колхоз, мы любуемся этой девчушкой. Как тонко природа подобрала краски для её нарядной пушистой шубки — как будто художник делал мазки на картине, подбирая цвета. Родители наградили Гвиневру благородным обликом, смотреть на неё — одно удовольствие.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Гвиневре</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Гвиневра" data-slug="gvinevra">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="lancelot">
+            <img src="images/cat-lancelot.jpg" alt="Ланселот" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Ланселот</h3>
+              <p class="pet-meta">Кот · Мужской</p>
+              <p class="pet-desc">Этот парень невероятно красив, он буквально притягивает к себе взгляды абсолютно всех, кто заходит в кошачий колхоз. Что и говорить: природа одарила его невероятной внешностью. Чего только стоит кремовый окрас его пушистой и роскошной шубки! Ланселот не просто хорош, он прекрасен! Восхищаться его обликом, честно вам скажем, можно бесконечно.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Ланселоте</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Ланселот" data-slug="lancelot">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="selesta">
+            <img src="images/cat-selesta.jpg" alt="Селеста" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Селеста</h3>
+              <p class="pet-meta">Кошка · Женский</p>
+              <p class="pet-desc">Как мастерски точно передан характер через призму её взгляда: она очаровывает, словно опаивая приворотным зельем своих изумрудных глаз. Совершенно космические, упоительные в своём безграничном эгоцентризме и презрительно-недоверчивом отношении к двуногим. Убивает красотой, харизмой и демонически-неприступным взглядом наша недотрога — кошка Селеста.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Селесте</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Селеста" data-slug="selesta">📤 Поделиться</button>
             </div>
           </article>
 
@@ -527,9 +668,16 @@
       <div class="footer-links">
         <a href="index.html#about">О нас</a>
         <a href="pets.html">Питомцы</a>
+        <a href="adopted.html">Нашли семью</a>
         <a href="news.html">Новости</a>
+        <a href="faq.html">Вопросы</a>
         <a href="index.html#help">Помочь</a>
         <a href="index.html#contact">Контакты</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://vk.ru/pravonajizn44" target="_blank" rel="noopener" aria-label="Мы в VK">
+          <svg viewBox="0 0 24 24"><path d="M13.16 19.02c-6.9 0-10.83-4.73-11-12.6h3.44c.12 5.79 2.7 8.24 4.74 8.75v-8.75h3.24v4.99c2.01-.22 4.13-2.49 4.85-4.99h3.24c-.55 3.08-2.82 5.35-4.43 6.28 1.61.75 4.19 2.73 5.18 6.32h-3.57c-.77-2.37-2.72-4.2-5.4-4.47v4.47h-.39z"/></svg>
+        </a>
       </div>
     </div>
   </footer>

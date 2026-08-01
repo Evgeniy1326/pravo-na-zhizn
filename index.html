@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/logo.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Право на Жизнь — приют для животных, Кострома">
+  <meta property="og:description" content="Мы спасаем бездомных кошек и собак, лечим их и находим любящие семьи. Присоединяйтесь — вместе мы можем больше.">
+  <meta property="og:image" content="images/logo.jpg">
+  <meta name="twitter:card" content="summary">
 </head>
 <body>
   <header class="header" id="top">
@@ -25,7 +31,9 @@
       <ul class="nav-links">
         <li><a href="#about">О нас</a></li>
         <li><a href="pets.html">Наши питомцы</a></li>
+        <li><a href="adopted.html">Нашли семью</a></li>
         <li><a href="news.html">Новости</a></li>
+        <li><a href="faq.html">Вопросы</a></li>
         <li><a href="#help">Как помочь</a></li>
         <li><a href="#contact">Контакты</a></li>
         <li><a href="#help" class="btn btn-small">Помочь приюту</a></li>
@@ -45,7 +53,7 @@
         </p>
         <div class="hero-actions">
           <a href="pets.html" class="btn btn-primary">Найти друга</a>
-          <a href="#help" class="btn btn-outline">Стать волонтёром</a>
+          <a href="volunteer.html" class="btn btn-outline">Стать волонтёром</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
@@ -55,6 +63,10 @@
           <div class="stat">
             <span class="stat-number">120+</span>
             <span class="stat-label">нашли дом</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" id="home-total-count">…</span>
+            <span class="stat-label">сейчас ищут дом</span>
           </div>
         </div>
       </div>
@@ -160,6 +172,21 @@
       </div>
     </section>
 
+    <section class="latest-news section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Последнее в новостях</h2>
+          <p>Чем живёт приют прямо сейчас</p>
+        </div>
+        <div class="latest-news-grid" id="latest-news-grid">
+          <p style="text-align:center; color: var(--text-muted);">Загружаем последние новости…</p>
+        </div>
+        <div style="text-align:center; margin-top: 2rem;">
+          <a href="news.html" class="btn btn-outline" style="color: var(--green-dark); border-color: var(--green-dark);">Все новости</a>
+        </div>
+      </div>
+    </section>
+
     <section class="help section" id="help">
       <div class="container">
         <div class="section-header section-header-light">
@@ -172,11 +199,11 @@
             <h3>Усыновить</h3>
             <p>Подарите дом животному, которое этого заслуживает. Мы поможем с выбором и адаптацией.</p>
           </div>
-          <div class="help-card">
+          <a href="volunteer.html" class="help-card">
             <div class="help-icon">🤝</div>
             <h3>Стать волонтёром</h3>
             <p>Выгуливайте собак, играйте с кошками, помогайте на мероприятиях и в соцсетях.</p>
-          </div>
+          </a>
           <a href="donate.html" class="help-card">
             <div class="help-icon">💝</div>
             <h3>Сделать пожертвование</h3>
@@ -209,7 +236,23 @@
               <span class="contact-label">Адрес</span>
               <span>д. Коряково, стр. 13</span>
             </li>
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:pravonajizn44@yandex.ru">pravonajizn44@yandex.ru</a>
+            </li>
+            <li>
+              <span class="contact-label">Мы в VK</span>
+              <a href="https://vk.ru/pravonajizn44" target="_blank" rel="noopener">vk.ru/pravonajizn44</a>
+            </li>
           </ul>
+          <div class="map-embed">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=40.814368%2C57.740189&z=16&pt=40.814368,57.740189,pm2rdm"
+              loading="lazy"
+              allowfullscreen
+              title="Карта проезда к приюту">
+            </iframe>
+          </div>
         </div>
         <form class="contact-form" id="contact-form" action="https://formspree.io/f/pravonajizn44@yandex.ru" method="POST">
           <h3>Написать нам</h3>
@@ -242,9 +285,16 @@
       <div class="footer-links">
         <a href="#about">О нас</a>
         <a href="pets.html">Питомцы</a>
+        <a href="adopted.html">Нашли семью</a>
         <a href="news.html">Новости</a>
+        <a href="faq.html">Вопросы</a>
         <a href="#help">Помочь</a>
         <a href="#contact">Контакты</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://vk.ru/pravonajizn44" target="_blank" rel="noopener" aria-label="Мы в VK">
+          <svg viewBox="0 0 24 24"><path d="M13.16 19.02c-6.9 0-10.83-4.73-11-12.6h3.44c.12 5.79 2.7 8.24 4.74 8.75v-8.75h3.24v4.99c2.01-.22 4.13-2.49 4.85-4.99h3.24c-.55 3.08-2.82 5.35-4.43 6.28 1.61.75 4.19 2.73 5.18 6.32h-3.57c-.77-2.37-2.72-4.2-5.4-4.47v4.47h-.39z"/></svg>
+        </a>
       </div>
     </div>
   </footer>

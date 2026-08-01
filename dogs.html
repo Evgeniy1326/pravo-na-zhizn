@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/logo.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Собаки — Право на Жизнь">
+  <meta property="og:description" content="Собаки приюта «Право на Жизнь», которые ищут дом.">
+  <meta property="og:image" content="images/logo.jpg">
+  <meta name="twitter:card" content="summary">
 </head>
 <body>
   <header class="header" id="top">
@@ -25,7 +31,9 @@
       <ul class="nav-links">
         <li><a href="index.html#about">О нас</a></li>
         <li><a href="pets.html">Наши питомцы</a></li>
+        <li><a href="adopted.html">Нашли семью</a></li>
         <li><a href="news.html">Новости</a></li>
+        <li><a href="faq.html">Вопросы</a></li>
         <li><a href="index.html#help">Как помочь</a></li>
         <li><a href="index.html#contact">Контакты</a></li>
         <li><a href="index.html#help" class="btn btn-small">Помочь приюту</a></li>
@@ -39,12 +47,23 @@
         <a href="pets.html" class="breadcrumb">← Назад к выбору</a>
         <h1>🐶 Собаки</h1>
         <p>Эти собаки ждут любящую семью. Может, именно вы — их человек?</p>
+        <p class="pet-count-badge" data-animal="dog">Сейчас в приюте: <strong id="pet-count">…</strong></p>
       </div>
     </section>
 
     <section class="catalog-section">
       <div class="container">
         <a href="pets.html" class="back-link">← Все категории</a>
+
+        <div class="pet-filter-bar">
+          <input type="text" id="pet-search" class="pet-search-input" placeholder="🔍 Искать по имени...">
+          <div class="pet-filter-buttons">
+            <button type="button" class="filter-btn active" data-gender="all">Все</button>
+            <button type="button" class="filter-btn" data-gender="Женский">Девочки</button>
+            <button type="button" class="filter-btn" data-gender="Мужской">Мальчики</button>
+          </div>
+          <p class="pet-filter-count" id="pet-filter-count"></p>
+        </div>
 
         <div class="catalog-grid">
 
@@ -53,525 +72,676 @@
             и замените фото, имя, описание и ссылку на форму.
             Фото кладите в папку images/ с именем вида dog-имя.jpg и указывайте его в src.
           -->
-          <article class="pet-card">
+          <article class="pet-card" id="gavrosh">
             <img src="images/dog-gavrosh.jpg" alt="Гаврош" class="pet-photo-img">
             <div class="pet-info">
               <h3>Гаврош</h3>
               <p class="pet-meta">Собака · 3 года · Мужской</p>
               <p class="pet-desc">Безобидный, ласковый, трепетный. Очень ручной — он ни на шаг не отойдёт от вас. Хватается лапками за человека и держится. Такой милый и наивный пёсик, что очень жалеем его.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Гавроше</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Гаврош" data-slug="gavrosh">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="gera">
             <img src="images/dog-gera.jpg" alt="Гера" class="pet-photo-img">
             <div class="pet-info">
               <h3>Гера</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Да, она чёрненькая, но поверьте: такую не спутаешь ни с кем. Искрящиеся глазки, длинные ушки и фирменный хвост-вертолёт, который не устаёт размахивать от счастья.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Гере</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Гера" data-slug="gera">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="slavik">
             <img src="images/dog-slavik.jpg" alt="Славик" class="pet-photo-img">
             <div class="pet-info">
               <h3>Славик</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Несмотря на внушительную внешность, в нём таится нежность щенка. Он уравновешен, умён и очень послушен. Приучен ходить на поводке: не тянет, спокойно ждёт начала прогулки и идеально ведёт себя дома. Славик кастрирован.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Славике</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Славик" data-slug="slavik">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="telma">
             <img src="images/dog-telma.jpg" alt="Тельма" class="pet-photo-img">
             <div class="pet-info">
               <h3>Тельма</h3>
               <p class="pet-meta">Собака</p>
               <p class="pet-desc">Невероятно преданная, отлично ходит на поводке, очень смышлёная, сообразительная, в меру активная. Такой хрупкой собаке, как Тельма, совсем не место в приюте.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Тельме</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Тельма" data-slug="telma">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="muha">
             <img src="images/dog-muha.jpg" alt="Муха" class="pet-photo-img">
             <div class="pet-info">
               <h3>Муха</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Вечная девочка-подросток, энергии которой хватит на десяток собак! Она готова бегать и играть с волонтёрами до потери пульса. С появлением у вас Мухи вы ощутите эту детскую радость, непосредственность и искреннюю открытость в полной мере.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Мухе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Муха" data-slug="muha">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="soechka">
             <img src="images/dog-soechka.jpg" alt="Соечка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Соечка</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Как же любит общаться, на ручки прыгать, обниматься — это всё про неё! Задор и оптимизм у этой собаки неиссякаемый. Абсолютно социализированная, управляемая, воспитанная, коммуникабельная. Проживать с такой собакой — просто мечта!</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Соечке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Соечка" data-slug="soechka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="ars">
             <img src="images/dog-ars.jpg" alt="Арс" class="pet-photo-img">
             <div class="pet-info">
               <h3>Арс</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Хорош собой, активен и умён. Среднего размера, вполне адекватный, идеально подойдёт для проживания в частном доме, в вольере. После скитаний и бед уличной жизни Арсик заслуживает самых добрых рук и преданных людей.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Арсе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Арс" data-slug="ars">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="shans">
             <img src="images/dog-shans.jpg" alt="Шанс" class="pet-photo-img">
             <div class="pet-info">
               <h3>Шанс</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Этот рыжий мальчишка бесконечно улыбается. А мы глядим на него и не можем нарадоваться, что все его беды позади. Сейчас это очень весёлый товарищ, который бесконечно любит людей. На прогулке он стремится всех заобнимать.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Шансе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Шанс" data-slug="shans">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="lyudochka">
             <img src="images/dog-ludochka.jpg" alt="Людочка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Людочка</h3>
               <p class="pet-meta">Собака · трёхлапая · Женский</p>
               <p class="pet-desc">Маленькая, трёхлапая собака с большим заветным желанием, которое может исполнить только волшебник, — получить себе немного смелости. Со знакомыми волонтёрами Людушка добрая, пугливая, но смышлёная девочка. Просто и быстро заполучить её в подружки не выйдет, но сколько вы потом получите радости от того, что сделаете одного робкого хвостика счастливым.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Людочке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Людочка" data-slug="lyudochka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="teffi">
             <img src="images/dog-teffi.jpg" alt="Тэффи" class="pet-photo-img">
             <div class="pet-info">
               <h3>Тэффи</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Ласковая, добрая и просто невероятная Тэффи мечтает об уютном доме. Она сама нежность, может часами обниматься с человеком. Спокойная, не суетливая, не лает по пустякам. Тэффи обожает всех: мужчин, женщин, детей, других животных.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Тэффи</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Тэффи" data-slug="teffi">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="taler">
             <img src="images/dog-taler.jpg" alt="Талер" class="pet-photo-img">
             <div class="pet-info">
               <h3>Талер</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Вы давно мечтали о собаке, но не знали, о какой именно? Тогда советуем присмотреться к Талеру. Молодой, активный, позитивный и очень дружелюбный. Парень чистокровный дворянин, но очень похож на маленькую лаечку.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Талере</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Талер" data-slug="taler">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="azaliya">
             <img src="images/dog-azaliya.jpg" alt="Азалия" class="pet-photo-img">
             <div class="pet-info">
               <h3>Азалия</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Увидев Азалию, вы сразу будете ею очарованы. Она сама нежность, к рукам человека так и льнёт. Ей всё время хочется быть в центре внимания, чтобы её гладили и хвалили. Она энерджайзер, юркая, ловкая.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Азалии</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Азалия" data-slug="azaliya">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="sandra">
             <img src="images/dog-sandra.jpg" alt="Сандра" class="pet-photo-img">
             <div class="pet-info">
               <h3>Сандра</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Сандра у нас не самая уверенная в себе собака, но зато очень нежная и трогательная. Такая она вся беззащитная и безобидная. А из-за красивой шёрстки похожа на медвежонка.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Сандре</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Сандра" data-slug="sandra">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="timoshka">
             <img src="images/dog-timoshka.jpg" alt="Тимошка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Тимошка</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Долго думали, какого же цвета у нас Тимошка. Вроде не рыжего, но и не бежевого. Потом поняли — а он ведь жёлтенький, как солнышко. Он и правда такой — тёплый, добрый и очень милый. Бодр, полон сил, привлекателен и лицом, и фигурой.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Тимошке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Тимошка" data-slug="timoshka">📤 Поделиться</button>
             </div>
           </article>
 
           <!-- Добавляйте новые карточки собак здесь -->
 
-          <article class="pet-card">
+          <article class="pet-card" id="rumba">
             <img src="images/dog-rumba.jpg" alt="Румба" class="pet-photo-img">
             <div class="pet-info">
               <h3>Румба</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Девочка одна из тех, кто умеет на прогулках грозно и страшно лаять на незнакомцев — будет превосходной охранницей! Очень ласковая, не капризная, послушная, любит побегать и поиграть. К другим собакам относится адекватно.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Румбе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Румба" data-slug="rumba">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="asti">
             <img src="images/dog-asti.jpg" alt="Асти" class="pet-photo-img">
             <div class="pet-info">
               <h3>Асти</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Скромная и застенчивая на первый взгляд, а на самом деле — настоящая собака мечты: ласковая, доверчивая и очень игривая. С детства сохранила милую привычку сразу ложиться и подставлять пузико при встрече на прогулке. С другими животными живёт в полной идиллии — обожает резвиться с сестрёнкой и братишкой.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Асти</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Асти" data-slug="asti">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="bars">
             <img src="images/dog-bars.jpg" alt="Барс" class="pet-photo-img">
             <div class="pet-info">
               <h3>Барс</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Мальчик очень верный и преданный, у него бездонные глаза, которыми он буквально смотрит в самое сердце! Барс ласковый пёс и бесконечно добрый, очень спокойный и ненавязчивый. При встрече может показаться немного зажатым, но на самом деле он просто чересчур интеллигентный и тактичный молодой человек.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Барсе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Барс" data-slug="bars">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="mendi">
             <img src="images/dog-mendi.jpg" alt="Мэнди" class="pet-photo-img">
             <div class="pet-info">
               <h3>Мэнди</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">В Мэнди будто живёт дух настоящей служебной собаки — она всё замечает, ничего не пропускает, моментально реагирует на любой шорох и будто внутренне всегда готова к важному заданию: хоть след брать, хоть тапочки приносить, хоть просто бдительно охранять кусочек вашего счастья.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Мэнди</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Мэнди" data-slug="mendi">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="losyashik">
             <img src="images/dog-losyashik.jpg" alt="Лосяшик" class="pet-photo-img">
             <div class="pet-info">
               <h3>Лосяшик</h3>
               <p class="pet-meta">Собака · 1 год · Мужской</p>
               <p class="pet-desc">Нашему Лосяшику годик! Благодаря случившейся с ним беде он попал в приют и выжил — и целый год смешит и радует всех вокруг. Маленьким его уже не назовёшь: из щенка, умещавшегося в кошачью клетку, вымахал самый настоящий Лосяш.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Лосяшике</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Лосяшик" data-slug="losyashik">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="alma">
             <img src="images/dog-alma.jpg" alt="Альма" class="pet-photo-img">
             <div class="pet-info">
               <h3>Альма</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Почти 6 лет Альма мечтает стать кому-то нужной. Раньше у неё был хозяин, но тогда она была совсем молодой и плохо помнит то время. Потом скиталась, жила на дачах, её иногда кормили хорошие люди, но никто из них не захотел стать её Хозяином.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Альме</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Альма" data-slug="alma">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="anfiska">
             <img src="images/dog-anfiska.jpg" alt="Анфиска" class="pet-photo-img">
             <div class="pet-info">
               <h3>Анфиска</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Анфиска — ещё ребёнок: ласковая, добрая, позитивная и активная. Смелая — ничего не боится. Как и все дети, любит бегать и играть, любит всех вокруг — и людей, и собак. Так что легко вольётся в любую семью и любую компанию.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Анфиске</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Анфиска" data-slug="anfiska">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="ladoga">
             <img src="images/dog-ladoga.jpg" alt="Ладога" class="pet-photo-img">
             <div class="pet-info">
               <h3>Ладога</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Ладога родилась без одного глазика и ушка, но это не помешало ей вырасти в сильную, красивую и заводную собаку. Когда её берут на прогулку, она прыгает и носится от радости. Энергичная и активная, с собаками избирательна — но если выберет себе друзей, будет бегать с ними без остановки. Умная, сообразительная, очень преданная.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Ладоге</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Ладога" data-slug="ladoga">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="zolotinka">
             <img src="images/dog-zolotinka.jpg" alt="Золотинка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Золотинка</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Золотинка — настоящая красавица с человеческим взглядом. Крепкая, статная, она сразу привлекает внимание, но при этом остаётся трусишкой, несмотря на свои внушительные размеры. Попав в приют подростком, Золотка прошла долгий путь, чтобы социализироваться — она всё ещё осторожна с незнакомыми, но прогресс у неё просто огромный.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Золотинке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Золотинка" data-slug="zolotinka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="kokosinka">
             <img src="images/dog-kokosinka.jpg" alt="Кокосинка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Кокосинка</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Кокосинка не из тех, кто будет тихо сидеть в уголке. Ей нужно бегать, прыгать, выяснять, что там шуршит, и обязательно побеждать в каждой щенячьей баталии. С такой девчонкой точно не заскучаешь — каждый день будет маленьким приключением.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Кокосинке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Кокосинка" data-slug="kokosinka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="valensiya">
             <img src="images/dog-valensiya.jpg" alt="Валенсия" class="pet-photo-img">
             <div class="pet-info">
               <h3>Валенсия</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Валенсия очень ласковая девочка и настоящая душа компании! У неё большое, доброе и открытое для всех сердце. Валя-Валенсия отлично ладит с собратьями, всегда готова пообщаться с людьми — невозможно пройти мимо, чтобы не обняться с этим милым ребёнком!</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Валенсии</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Валенсия" data-slug="valensiya">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="tykvochka">
             <img src="images/dog-tykvochka.jpg" alt="Тыквочка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Тыквочка</h3>
               <p class="pet-meta">Собака · щенок · Женский</p>
               <p class="pet-desc">Знакомьтесь, это наша Тыквочка! Очень милая, забавная девчушка. А большие ушки нужны ей для того, чтобы не пропустить самое главное в жизни любого приютского щеночка — звук шагов его будущих родителей. Тыквочка будто каждую секунду ловит звуки будущего счастья, которое вот-вот случится.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Тыквочке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Тыквочка" data-slug="tykvochka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="amir">
             <img src="images/dog-amir.jpg" alt="Амир" class="pet-photo-img">
             <div class="pet-info">
               <h3>Амир</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Из маленького клубочка-комочка Амир превратился в стройного и гармонично сложенного юношу. Он дружелюбен ко всем, легко вливается в игру с сородичами. К незнакомым людям ему нужно немного привыкнуть, а со своими он чувствует себя свободно и спокойно.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать об Амире</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Амир" data-slug="amir">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="lapus">
             <img src="images/dog-lapus.jpg" alt="Лапус" class="pet-photo-img">
             <div class="pet-info">
               <h3>Лапус</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Живёт в приюте с 2014 года. Пёс идеальный — ему бы уголок вашего дома и хоть ещё пожить в настоящей семье, чтобы постоянно гуляли и гладили. Ведь возраст — это просто цифра в собачьем паспорте.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Лапусе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Лапус" data-slug="lapus">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="kayli">
             <img src="images/dog-kayli.jpg" alt="Кайли" class="pet-photo-img">
             <div class="pet-info">
               <h3>Кайли</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Кайли совсем молоденькая. Она душа компании, очень любит внимание и ласку. С теми, кого знает, хорошо идёт на контакт — дружелюбная и игривая, ей всё интересно и всё любопытно. Отлично ладит и с людьми, и с животными. Не задира, не врединка — собака с хорошим и спокойным характером.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Кайли</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Кайли" data-slug="kayli">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="serzhulka">
             <img src="images/dog-serzhulka.jpg" alt="Сержулька" class="pet-photo-img">
             <div class="pet-info">
               <h3>Сержулька</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Скажем честно: Сержулька уже не мальчик, годы идут. Но внутри он всё тот же щенок — наивный, трогательный, беззащитный. Он по-прежнему тянется к человеку и просится на ручки, как будто всё ещё ждёт, что кто-то однажды скажет: «Ты мой».</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Сержульке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Сержулька" data-slug="serzhulka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="golubka">
             <img src="images/dog-golubka.jpg" alt="Голубка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Голубка</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">С виду эта девочка очень большая, как медвежонок! Но в ней скрывается самый наивный и добродушный ребёнок. Голубка такая безобидная великанша — использует свою силищу только во время игр, поэтому все собаки разбегаются от неё. Неукротимая, заводная девочка.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Голубке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Голубка" data-slug="golubka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="chernyy">
             <img src="images/dog-cherny.jpg" alt="Чёрный" class="pet-photo-img">
             <div class="pet-info">
               <h3>Чёрный</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Пёс Чёрный — из числа крупных представителей нашего приюта. Статный, хорошо сложенный, с отличной выправкой. Времена, когда парень был диковат, давно прошли: он отлично ходит на поводке, хорошо ладит с другими собаками, в вольере ничего не портит. Любит купаться в любую погоду.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Чёрном</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Чёрный" data-slug="chernyy">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="kapelka">
             <img src="images/dog-kapelka.jpg" alt="Капелька" class="pet-photo-img">
             <div class="pet-info">
               <h3>Капелька</h3>
               <p class="pet-meta">Собака · 1 год · Женский</p>
               <p class="pet-desc">Капелька — чудесная, добрая, скромная малышка с очаровательными янтарными глазками и маленькими ушками. Фигура у неё очень ладненькая, а сама она совсем низенькая. Здорова, стерилизована и привита (есть паспорт). С чужими людьми поначалу стесняется, но проходит время — и при встрече она уже готова запрыгнуть на ручки.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Капельке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Капелька" data-slug="kapelka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="valera">
             <img src="images/dog-valera.jpg" alt="Валера" class="pet-photo-img">
             <div class="pet-info">
               <h3>Валера</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Обладатель такого серьёзного имени совсем не отличается серьёзным видом. Валера у нас низенький, худенький, тонкой душевной организации мальчик. Не хулиган, не забияка, не бегун — а очень добрый и нежный. Ходит всегда рядышком, спокойно. Мечта любой женщины!</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Валере</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Валера" data-slug="valera">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="monika">
             <img src="images/dog-monika.jpg" alt="Моника" class="pet-photo-img">
             <div class="pet-info">
               <h3>Моника</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Бородатая уютная Моника в приюте прошла путь от боязливой до идеальной собаки на выгуле. Умная и добрая, но всё ещё осторожная к незнакомым — родилась на улице, от людей мало хорошего видела. С большим удовольствием гуляет, носится и ходит на поводке, научилась радоваться людям и прогулкам.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Монике</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Моника" data-slug="monika">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="reks">
             <img src="images/dog-rex.jpg" alt="Рекс" class="pet-photo-img">
             <div class="pet-info">
               <h3>Рекс</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Молодой крупный Рекс — очень доверчивый, нежный, спокойный пёс, просто находка! Обладает внушительной внешностью, но абсолютно плюшевый внутри. Со своей любовью и лаской навязываться не будет — у Рекса всё очень степенно и воспитанно.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Рексе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Рекс" data-slug="reks">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="grunya">
             <img src="images/dog-grunya.jpg" alt="Груня" class="pet-photo-img">
             <div class="pet-info">
               <h3>Груня</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Груне был вынесен жестокий приговор «не нужна» после смерти хозяйки — желающих взять собаку себе не нашлось, и её просто выставили на улицу. Весёлая толстушка, простая и улыбчивая, несмотря ни на что доверчивая к людям, со смешными зубками врастопырку и большими влажными карими глазками. Грунюшка очень харизматична.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Груне</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Груня" data-slug="grunya">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="kaspiy">
             <img src="images/dog-kaspiy.jpg" alt="Каспий" class="pet-photo-img">
             <div class="pet-info">
               <h3>Каспий</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Каспий в приюте давно. В вольере сидеть не любит, ему бы в люди выходить. Мордашка у него всегда улыбчивая, настроение на высоте — как же любит он размяться и подышать свежим воздухом! Из грустного бирюка сразу преображается в энергичного телёнка, когда видит волонтёров.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Каспии</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Каспий" data-slug="kaspiy">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="fart">
             <img src="images/dog-fart.jpg" alt="Фарт" class="pet-photo-img">
             <div class="pet-info">
               <h3>Фарт</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Парень очень активный и безбашенный — побежит, споткнётся о кочку, перевернётся, поползёт дальше, волонтёры бегут на помощь, а он — «не поднимайте меня, всё по плану!». Это две лапы и два колеса забиячества и искренней детской радости. Очень позитивный и весёлый, при этом невероятно ласковый.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Фарте</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Фарт" data-slug="fart">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="murka">
             <img src="images/dog-murka.jpg" alt="Мурка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Мурка</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Не зря её так назвали — невозможно ласковая девочка, кажется, ещё немного и замурчала бы от нежности, если бы могла. Красивая лисичка, умная, игривая и очень-очень контактная, готова во всём следовать за человеком. В приюте живёт уже очень давно, но свой чудесный характер за это время не растеряла.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Мурке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Мурка" data-slug="murka">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="karmen">
             <img src="images/dog-karmen.jpg" alt="Кармен" class="pet-photo-img">
             <div class="pet-info">
               <h3>Кармен</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Вот такая фигуристая барышня выросла из трогательной плюшевой малышки. Неповторимая танцующая походка, красивые лежачие позы, которые принимает Кармен, заставляют обращать на неё внимание и удивляться, какие эта скромница таит в себе благородные манеры. К сожалению, Кармен не обладает бойким характером — она скромна и стеснительна.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Кармен</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Кармен" data-slug="karmen">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="tango">
             <img src="images/dog-tango.jpg" alt="Танго" class="pet-photo-img">
             <div class="pet-info">
               <h3>Танго</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Ах, ну до чего же хорош этот ладненький чертяка! Это нереально ласковый мальчишка, жизнерадостный и открытый, который просто задыхается от радости, когда кладёт лапки на плечи и ищет глазами ваши глаза. Ах, эти глаза чайного цвета — наивные и ждущие, полные надежды…</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Танго</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Танго" data-slug="tango">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="tihon">
             <img src="images/dog-tihon.jpg" alt="Тихон" class="pet-photo-img">
             <div class="pet-info">
               <h3>Тихон</h3>
               <p class="pet-meta">Собака · Мужской</p>
               <p class="pet-desc">Тихон хорош собой, бородат. Обладает отличным аппетитом и активной жизненной позицией — всех девчонок на прогулке проверит, сам себя на поводке поводит. До сих пор Тиша немного боится всего: хоть он и большой, но очень беззащитный, и совсем не охранник, а настоящий лучший друг — преданный и ласковый. Мы очень любим Тишу за то, что он ведёт себя безобидно, как щенок, — такой уж он дурашливый, шебутной, но сладкий мальчишка.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Тихоне</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Тихон" data-slug="tihon">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="medeya">
             <img src="images/dog-medeya.jpg" alt="Медея" class="pet-photo-img">
             <div class="pet-info">
               <h3>Медея</h3>
               <p class="pet-meta">Собака · подросток · Женский</p>
               <p class="pet-desc">Эта девчушка-веселушка — наша Медея. У неё никогда не бывает плохого настроения. Медея-подросток, и, как и все дети, она активна, позитивна, бодра и весела. Природа подарила ей роскошную шубку — Медея невысокая в холке, коренастая, и вся такая плюшевая и уютная.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Медее</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Медея" data-slug="medeya">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="tigra">
             <img src="images/dog-tigra.jpg" alt="Тигра" class="pet-photo-img">
             <div class="pet-info">
               <h3>Тигра</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Тигра — девочка с выдающимися ушами и непростым характером. Уши у неё такие большие, что в детстве она улавливала ими малейший звук и при любом шорохе бросалась бежать, да и к рукам волонтёров относилась с большим недоверием. Но повзрослела, стала послушнее и спокойнее, с большой радостью бежит гулять и общаться. Точно оправдывает своё имя — уж такая бесстрашная телохранительница.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Тигре</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Тигра" data-slug="tigra">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="luiza">
             <img src="images/dog-luiza.jpg" alt="Луиза" class="pet-photo-img">
             <div class="pet-info">
               <h3>Луиза</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Малышка Луиза полностью ориентирована на человека, всё понимает, ласкается, но при этом ненавязчивая и скромная в общении с новыми людьми. Ну, а какая она красивая! Шумная компания и большая семья не для неё — она сможет стать настоящим центром вселенной для единственной любимой хозяйки.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Луизе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Луиза" data-slug="luiza">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="nezhna">
             <img src="images/dog-nezhna.jpg" alt="Нежна" class="pet-photo-img">
             <div class="pet-info">
               <h3>Нежна</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Милая Нежна — девочка, которая всегда ходит рядом. Очень умная и послушная собака, старается всегда угодить человеку. Перед прогулкой спокойно ждёт, пока на неё наденут ошейник и поводок. Дружит со всеми собаками, тихая и незаметная, всё понимает с полуслова. Красивая, молодая — отлично подойдёт второй собакой.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Нежне</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Нежна" data-slug="nezhna">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="robin">
             <img src="images/dog-robin.jpg" alt="Робин" class="pet-photo-img">
             <div class="pet-info">
               <h3>Робин</h3>
               <p class="pet-meta">Пёс · Мужской</p>
               <p class="pet-desc">Когда смотришь на Робина, так и расплываешься в улыбке от умиления. Этот большой бородатый пес на самом деле еще тот шустрый попрыгунчик. Жизнерадостный и любопытный, в меру активный, в меру пугливый. Робин, конечно, уже не щенок, но все еще очень добрый, наивный, ласковый ребенок.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Робине</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Робин" data-slug="robin">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="zlatan">
             <img src="images/dog-zlatan.jpg" alt="Златан" class="pet-photo-img">
             <div class="pet-info">
               <h3>Златан</h3>
               <p class="pet-meta">Пёс · Мужской</p>
               <p class="pet-desc">Это молоденький и веселый мальчишка, которому все интересно и все любопытно. Веселый, невероятно добрый, скромняга. Ни в какие разборки никогда не полезет, слушает и понимает все с полуслова. Молод и красив. В приюте прослыл исключительно замечательным мальчишкой! Ласковый малый, любит играть с сородичами, рядом с ними всегда раскрывается.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Златане</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Златан" data-slug="zlatan">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="geroinya">
             <img src="images/dog-geroinya.jpg" alt="Героиня" class="pet-photo-img">
             <div class="pet-info">
               <h3>Героиня</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Умная и независимая собака. Никак не подумаешь, что под этой скромной и мягкой внешностью скрывается сильная натура. Героиня в самом расцвете лет, хороша собой и знает себе цену. И вообще она дама серьёзная — «сколотила» свою стаю и установила в ней жёсткий матриархат.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Героине</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Героиня" data-slug="geroinya">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="bond">
             <img src="images/dog-bond.jpg" alt="Бонд" class="pet-photo-img">
             <div class="pet-info">
               <h3>Бонд</h3>
               <p class="pet-meta">Пёс · Мужской</p>
               <p class="pet-desc">Этот замечательный пушистый друг с лёгкостью вольётся в любую семью. Он очень контактный товарищ, настоящий компаньон, невероятно любит людей, дружелюбен ко всем! Любит обниматься, играть. Обучаем, с лёгкостью усваивает команды. Идеально подходит для содержания в квартире, приучен к выгулу. Хорошо ходит на поводке.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Бонде</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Бонд" data-slug="bond">📤 Поделиться</button>
             </div>
           </article>
 
-          <article class="pet-card">
+          <article class="pet-card" id="strelka">
             <img src="images/dog-strelka.jpg" alt="Стрелка" class="pet-photo-img">
             <div class="pet-info">
               <h3>Стрелка</h3>
               <p class="pet-meta">Собака · Женский</p>
               <p class="pet-desc">Как мало надо песам для счастья — чешут пузико, значит, день удался! Жалко, что массажики делают только по выходным. Вот был бы свой собственный человек и гладил бы каждый день. Все наши собаки мечтают стать нужными для своего главного человека, а такие как Стрелка — совсем стесняшки — ещё больше.</p>
               <a href="index.html#contact" class="btn btn-small">Узнать о Стрелке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Стрелка" data-slug="strelka">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="dafna">
+            <img src="images/dog-dafna.jpg" alt="Дафна" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Дафна</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Дафна, ну очень прелестная девочка. Лохматая, улыбчивая, ласковая! Только вот её чрезмерная осторожность в общении с людьми делает поиск семьи сложной задачей. Этакая она стесняшка-обаяшка. С ней придётся набраться терпения и не бояться трудностей. Но эта бородатая мордашка этого заслуживает. Дафна отлично подойдёт второй собакой в семью — она любит брать пример с более смелых собак.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Дафне</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Дафна" data-slug="dafna">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="sakura">
+            <img src="images/dog-sakura.jpg" alt="Сакура" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Сакура</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Сакура (по паспорту Акира), как настоящая японка, отличается высоким интеллектом, послушанием и организованностью. Коммуникабельная, добрая, смышлёная девочка необыкновенной красоты и обаяния готова быть с вами рядом и наполнять вашу жизнь радостью бытия: вместе с вами слушать весенние трели соловья, валяться в пушистом снегу, шуршать опавшими листьями и бултыхаться в тёплой речке. Мегапозитивная, заводная и активная молодая мадам.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Сакуре</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Сакура" data-slug="sakura">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="karp">
+            <img src="images/dog-karp.jpg" alt="Карп" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Карп</h3>
+              <p class="pet-meta">Пёс · Мужской</p>
+              <p class="pet-desc">Карп. Мальчик умный и в хороших руках станет прекрасным псом. Пока он ещё подросток, но уже невероятно красив, быстр и хорошо сложен. Будет рад долгим прогулкам и играм. В нём море энергии, и он готов её тратить. Ищем для него родителей, которым будет в радость заниматься с собакой и посвящать ей своё время.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Карпе</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Карп" data-slug="karp">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="iva">
+            <img src="images/dog-iva.jpg" alt="Ива" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Ива</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Её 5 друзей (братьев и сестричек) уже давно дома, а Ива задержалась и всё ещё ждёт своего человека. Возможно, дело в её скромности и осторожности — она никогда сама не подбежит к незнакомому человеку. Но надо просто познакомиться поближе — несколько свиданий и вкусняшки всё исправят! И тогда вы увидите, какая это умная, активная и жизнерадостная собака.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать об Иве</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Ива" data-slug="iva">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="zhulka">
+            <img src="images/dog-zhulka.jpg" alt="Жулька" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Жулька</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Скучать никому не позволено! Компактная и аккуратная, но в то же время яркая барышня. Характер задорный, девчушка любвеобильная и нежная. Привита, стерилизована. Хорошо ходит на поводке. Очень ласковая, ориентирована на человека, наполнит ваш дом радостью и дружелюбием.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Жульке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Жулька" data-slug="zhulka">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="kazbek">
+            <img src="images/dog-kazbek.jpg" alt="Казбек" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Казбек</h3>
+              <p class="pet-meta">Пёс · Мужской</p>
+              <p class="pet-desc">Казбек — чудесная собака с обаянием, которое покоряет с первого взгляда. Несмотря на свою серьёзную внешность, он обожает ласку и внимание. Стоит взять его на прогулку, как он тут же бросается к вам, стараясь лизнуть в лицо, словно говорит: «Спасибо, что ты рядом!» Ему важно чувствовать тепло и заботу человека. Он активный, но в меру — прогулка помогает ему выплеснуть энергию, после чего он спокойно идёт рядом.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Казбеке</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Казбек" data-slug="kazbek">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="rita">
+            <img src="images/dog-rita.jpg" alt="Рита" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Рита</h3>
+              <p class="pet-meta">Собака · Женский</p>
+              <p class="pet-desc">Телом Рита совсем обыкновенная собака, но глаза! Они у неё удивительные, так по-человечески она может смотреть ими. В них всегда детский восторг и большая радость. Очень добрая и любознательная девочка, которая изучает тщательно каждый новый уголок на прогулке. Мордочка у Риты уже поседевшая, но энергии ещё ого-го. Эта бесконфликтная и мудрая девочка давненько живёт в приюте и очень хочет домой!</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Рите</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Рита" data-slug="rita">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="skubi">
+            <img src="images/dog-skubi.jpg" alt="Скуби" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Скуби</h3>
+              <p class="pet-meta">Пёс · Мужской</p>
+              <p class="pet-desc">Есть у нас в приюте такой мечтательный романтик с медовыми глазками и забавными ушками! Смешной, добрый и по-щенячьи трогательный. Скуби очень бы хотел, чтобы такие же чуткие и нежные люди уже приехали наконец к нему на знакомство, потому что он создан для жизни в семье. Характер у него чудесный, спокойный — он будет очень рад пообщаться с новыми людьми и показать, кто здесь хороший мальчик.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Скуби</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Скуби" data-slug="skubi">📤 Поделиться</button>
+            </div>
+          </article>
+
+          <article class="pet-card" id="jay">
+            <img src="images/dog-jay.jpg" alt="Джай" class="pet-photo-img">
+            <div class="pet-info">
+              <h3>Джай</h3>
+              <p class="pet-meta">Пёс · Мужской</p>
+              <p class="pet-desc">Он, как плюшевая игрушечка, такая аккуратная и невероятно красивая, ладненькая и складненькая. Характер Джаю достался весёлый, взгляд выразительный. Джай любит абсолютно всех. За обнимашки с волонтёрами готов отдать душу. Быстр, как ветер, ласковый и добродушный. Столько всего сочетается в этой относительно небольшой по размеру собачке.</p>
+              <a href="index.html#contact" class="btn btn-small">Узнать о Джае</a>
+              <button type="button" class="btn btn-small btn-share" data-name="Джай" data-slug="jay">📤 Поделиться</button>
             </div>
           </article>
 
@@ -590,9 +760,16 @@
       <div class="footer-links">
         <a href="index.html#about">О нас</a>
         <a href="pets.html">Питомцы</a>
+        <a href="adopted.html">Нашли семью</a>
         <a href="news.html">Новости</a>
+        <a href="faq.html">Вопросы</a>
         <a href="index.html#help">Помочь</a>
         <a href="index.html#contact">Контакты</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://vk.ru/pravonajizn44" target="_blank" rel="noopener" aria-label="Мы в VK">
+          <svg viewBox="0 0 24 24"><path d="M13.16 19.02c-6.9 0-10.83-4.73-11-12.6h3.44c.12 5.79 2.7 8.24 4.74 8.75v-8.75h3.24v4.99c2.01-.22 4.13-2.49 4.85-4.99h3.24c-.55 3.08-2.82 5.35-4.43 6.28 1.61.75 4.19 2.73 5.18 6.32h-3.57c-.77-2.37-2.72-4.2-5.4-4.47v4.47h-.39z"/></svg>
+        </a>
       </div>
     </div>
   </footer>
