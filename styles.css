@@ -26,6 +26,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -33,6 +35,8 @@ body {
   color: var(--text);
   background: var(--cream);
   line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .container {
